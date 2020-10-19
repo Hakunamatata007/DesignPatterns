@@ -8,6 +8,18 @@ public class WeatherData implements Subject {
 	private List<Observer> observers;
 	private float temp, humidity, pressure;
 
+	public float getTemp() {
+		return temp;
+	}
+
+	public float getHumidity() {
+		return humidity;
+	}
+
+	public float getPressure() {
+		return pressure;
+	}
+
 	public WeatherData() {
 		observers = new ArrayList<>();
 	}
@@ -26,6 +38,7 @@ public class WeatherData implements Subject {
 	public void notifyObserver() {
 		for (Observer observer : observers) {
 			observer.update(temp, humidity, pressure);
+			observer.update();
 		}
 	}
 
