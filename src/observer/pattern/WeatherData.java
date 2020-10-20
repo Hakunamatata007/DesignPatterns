@@ -8,6 +8,7 @@ public class WeatherData implements Subject {
 	private List<Observer> observers;
 	private float temp, humidity, pressure;
 
+	// getState()
 	public float getTemp() {
 		return temp;
 	}
@@ -37,8 +38,8 @@ public class WeatherData implements Subject {
 	@Override
 	public void notifyObserver() {
 		for (Observer observer : observers) {
-			observer.update(temp, humidity, pressure);
-			observer.update();
+			observer.update(temp, humidity, pressure); // all data will be passed 
+			observer.update(); // responsibility of observer to fetch the required data.
 		}
 	}
 
@@ -46,6 +47,7 @@ public class WeatherData implements Subject {
 		notifyObserver();
 	}
 
+	// setState()
 	public void setMeasurment(float temp, float humidity, float pressure) {
 		this.humidity = humidity;
 		this.temp = temp;
