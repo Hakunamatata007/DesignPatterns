@@ -12,7 +12,7 @@ public class StarBuckCoffee {
 		// lets add some condiments
 		darkRoast = new MochaDecorator(darkRoast);
 		// since mochaDecorator is a CondimentDecorator and Condiment decorator is a
-		// Beverage
+		// Beverage and mocha decorator has Beverage
 		// hence we can override the default behaviour of darkRoast by providing
 		// additional behaviour to the existing behaviour
 		System.out.println(darkRoast.getDescription());
